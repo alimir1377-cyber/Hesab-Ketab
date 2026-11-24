@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دفتر حساب من</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f2fb;--card:#fff;--tx:#1b1630;--mu:#7a7396;--bd:#e7e3f5;--tr:#ebe7f7;--pu:#7c3aed;--rd:#ef4444;--or:#f59e0b;--gn:#16a34a;--tl:#0d9488;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0b1d;--card:#1a1530;--tx:#f3f0ff;--mu:#9d95bd;--bd:#2d2650;--tr:#2a2347;--rd:#f87171;--or:#fbbf24;--gn:#4ade80;--tl:#2dd4bf;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f0b1d;--card:#1a1530;--tx:#f3f0ff;--mu:#9d95bd;--bd:#2d2650;--tr:#2a2347;--rd:#f87171;--or:#fbbf24;--gn:#4ade80;--tl:#2dd4bf;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;font-size:14px;line-height:1.7;padding:14px 14px 110px;max-width:640px;margin-inline:auto}
+h1{font-size:22px;margin:4px 0 0;font-weight:800;background:linear-gradient(90deg,#7c3aed,#db2777);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);font-size:12.5px;margin-bottom:12px}
+.hero{background:linear-gradient(135deg,#5b21b6,#7c3aed 55%,#c026d3);color:#fff;border-radius:24px;padding:16px;margin:8px 0;box-shadow:0 10px 30px rgba(124,58,237,.3)}
+.hero .mu{color:rgba(255,255,255,.75)}
+.dn{position:relative;width:210px;height:210px;margin:6px auto}
+.dn svg{width:100%;height:100%}
+.dn .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.4}
+.dn .c b{font-size:19px;font-weight:800}.dn .c span{font-size:11.5px;opacity:.8}
+.lg{display:grid;gap:6px;margin-top:8px}
+.lg div{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:12px;padding:6px 10px}
+.lg i{width:10px;height:10px;border-radius:50%;display:block}
+.lg span{flex:1}.lg b{font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:13px;margin:10px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.g{border-radius:20px;padding:13px;color:#fff;min-height:104px;display:flex;flex-direction:column;justify-content:space-between}
+.g span{font-size:12px;opacity:.9}.g b{font-size:16px;font-weight:800;line-height:1.4}
+.g1{background:linear-gradient(135deg,#f97316,#dc2626)}.g2{background:linear-gradient(135deg,#10b981,#0f766e)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.top{display:flex;gap:12px;align-items:center}.grow{flex:1;min-width:0}
+.name{font-weight:800;font-size:15px}.mu{color:var(--mu);font-size:12.5px}
+.badge{font-size:11.5px;padding:1px 9px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.red{color:var(--rd)}.orange{color:var(--or)}.green{color:var(--gn)}.teal{color:var(--tl)}.pu{color:var(--pu)}
+.ico{width:46px;height:46px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.rg{position:relative;width:58px;height:58px;flex:none}.rg svg{width:100%;height:100%}.rg b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.two{display:flex;gap:8px;margin-top:10px}.two div{flex:1;border-radius:13px;padding:6px 10px;background:var(--bg)}
+.two small{display:block;color:var(--mu);font-size:11px}.two b{font-size:13px}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.b{font:inherit;font-size:12.5px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:11px;padding:5px 12px;cursor:pointer}
+.b.p{background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;border:0}
+.sec{font-weight:800;margin:18px 4px 2px;font-size:15px}
+.seg{display:flex;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:4px;margin:6px 0}
+.seg button{flex:1;border:0;background:none;font:inherit;color:var(--mu);padding:8px;border-radius:12px}
+.seg button.on{background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;font-weight:600}
+.tabs{position:fixed;bottom:0;inset-inline:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:5;max-width:640px;margin-inline:auto}
+.tabs button{flex:1;border:0;background:none;color:var(--mu);font:inherit;font-size:11.5px;padding:4px 2px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:0}
+.tabs button span{font-size:21px;line-height:1.2}.tabs button.on{color:var(--pu);font-weight:800}
+.fab{position:fixed;left:16px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:19px;border:0;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-size:30px;box-shadow:0 8px 22px rgba(219,39,119,.4);z-index:6;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(10,5,25,.55);display:flex;align-items:flex-end;justify-content:center;z-index:9}
+.sheet{background:var(--card);width:100%;max-width:640px;border-radius:24px 24px 0 0;padding:16px;max-height:90%;overflow:auto}
+label{display:block;font-size:12.5px;color:var(--mu);margin-top:10px}
+input,select{width:100%;font:inherit;font-size:16px;padding:9px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx)}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:4px}
+.bk{border:2px solid transparent;background:var(--bg);border-radius:14px;padding:6px 2px;font:inherit;font-size:11px;color:var(--tx);display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+.bk i{width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;font-style:normal}
+.bk.on{border-color:var(--pu)}
+.pr{display:flex;align-items:center;gap:8px;margin:6px 0}.pr span{flex:1;font-size:13px}.pr input{width:150px}
+details summary{cursor:pointer;font-weight:800}
+.empty{color:var(--mu);text-align:center;padding:18px}
+</style>
+</head>
+<body>
+<h1>💜 دفتر حساب من</h1>
+<div class="sub" id="today"></div>
+<div id="app"></div>
+<div id="fab"></div>
+<div class="tabs" id="tabs"></div>
+<div id="modal"></div>
+<script>
+var MN=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+function g2j(gy,gm,gd){var g=[0,31,59,90,120,151,181,212,243,273,304,334],g2=gm>2?gy+1:gy,d=355666+365*gy+~~((g2+3)/4)-~~((g2+99)/100)+~~((g2+399)/400)+gd+g[gm-1],jy=-1595+33*~~(d/12053);d%=12053;jy+=4*~~(d/1461);d%=1461;if(d>365){jy+=~~((d-1)/365);d=(d-1)%365}var jm=d<186?1+~~(d/31):7+~~((d-186)/30),jd=1+(d<186?d%31:(d-186)%30);return[jy,jm,jd]}
+function j2g(jy,jm,jd){jy+=1595;var d=-355668+365*jy+~~(jy/33)*8+~~((jy%33+3)/4)+jd+(jm<7?(jm-1)*31:(jm-7)*30+186),gy=400*~~(d/146097);d%=146097;if(d>36524){gy+=100*~~(--d/36524);d%=36524;if(d>=365)d++}gy+=4*~~(d/1461);d%=1461;if(d>365){gy+=~~((d-1)/365);d=(d-1)%365}var gd=d+1,s=[0,31,(gy%4==0&&gy%100!=0)||gy%400==0?29:28,31,30,31,30,31,31,30,31,30,31],gm;for(gm=0;gm<13;gm++){if(gd<=s[gm])break;gd-=s[gm]}return[gy,gm,gd]}
+function mlen(y,m){if(m<=6)return 31;if(m<=11)return 30;var g=j2g(y,12,30);return g2j(g[0],g[1],g[2])[1]==12?30:29}
+function utc(y,m,d){var g=j2g(y,m,Math.min(d,mlen(y,m)));return Date.UTC(g[0],g[1]-1,g[2])}
+var n=new Date(),T=g2j(n.getFullYear(),n.getMonth()+1,n.getDate()),TU=utc(T[0],T[1],T[2]);
+function fa(x,o){return Number(x).toLocaleString('fa-IR',o||{maximumFractionDigits:0})}
+function tm(x){return fa(x)+' تومان'}
+function cm(x){var a=Math.abs(x);return a>=1e9?fa(x/1e9,{maximumFractionDigits:2})+' میلیارد':a>=1e6?fa(x/1e6,{maximumFractionDigits:1})+' میلیون':fa(x)}
+function dstr(y,m,d){return fa(Math.min(d,mlen(y,m)))+' '+MN[m-1]+' '+String(y).replace(/\d/g,function(c){return '۰۱۲۳۴۵۶۷۸۹'[c]})}
+function num(s){return Number(String(s).replace(/[۰-۹]/g,function(c){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(c)}).replace(/[٠-٩]/g,function(c){return '٠١٢٣٤٥٦٧٨٩'.indexOf(c)}).replace(/[,٬،\s]/g,''))||0}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function days(y,m,d){return Math.round((utc(y,m,d)-TU)/86400000)}
+var BANKS=[['melli','بانک ملی','🏦','#1d4ed8'],['melat','بانک ملت','🏦','#dc2626'],['saderat','صادرات','🏦','#2563eb'],['tejarat','تجارت','🏦','#0ea5e9'],['sepah','سپه','🏦','#ea580c'],['pasargad','پاسارگاد','🏦','#a16207'],['parsian','پارسیان','🏦','#9d174d'],['refah','رفاه','🏦','#0d9488'],['maskan','مسکن','🏠','#f97316'],['blu','بلو بانک','💙','#3b82f6'],['snapp','اسنپ‌پی','🟢','#16a34a'],['digipay','دیجی‌پی','🛒','#e11d48'],['wepod','ویپاد','📱','#7c3aed'],['marriage','ازدواج','💍','#db2777'],['car','خودرو','🚗','#0891b2'],['other','سایر','💳','#64748b']];
+function B(k){return BANKS.find(function(b){return b[0]==k})||BANKS[15]}
+var PT=[['g24','طلای ۲۴ عیار (هر گرم)','🥇'],['g18','طلای ۱۸ عیار (هر گرم)','🟡'],['c1','سکه تمام امامی','🪙'],['c05','نیم‌سکه','🪙'],['c025','ربع‌سکه امامی','🪙'],['usd','دلار','💵'],['other','سایر (قیمت واحد را خودت بنویس)','💎']];
+var nm1=T[1]==12?1:T[1]+1,ny1=T[1]==12?T[0]+1:T[0];
+var S={loans:[],recv:[],assets:[],prices:{},pdate:''};
+try{var raw=localStorage.getItem('planner_v2_public');if(raw)S=JSON.parse(raw)}catch(e){}
+var SNAP={v:'1405-09-03',d:'۳ آذر ۱۴۰۵ (tgju.org)',p:{g24:33859300,g18:25394700,c1:262000000,c05:141120000,c025:77840000,usd:283890}};
+if(S.snapv!==SNAP.v){S.prices=Object.assign({},SNAP.p);S.pdate=SNAP.d;S.snapv=SNAP.v;save()}
+S.loans.forEach(function(l){if(!l.gap)l.gap=1});S.recv.forEach(function(r){if(!r.cnt){r.cnt=1;r.paidN=0;r.gap=1;if(r.id==11&&r.dir=='out'&&r.amount==80000000&&!r.done){r.amount=40000000;r.cnt=2;r.gap=2}}});save();
+function save(){try{localStorage.setItem('planner_v2_public',JSON.stringify(S))}catch(e){}}
+var tab='home',rt='in',sure=null;
+function uid(){return Date.now()+Math.floor(Math.random()*1000)}
+function chip(dd){var c=dd<0?'red':dd<=3?'orange':dd<=7?'teal':'mu',t=dd<0?fa(-dd)+' روز گذشته':dd==0?'امروز':dd==1?'فردا':fa(dd)+' روز دیگر';return '<span class="badge '+c+'">'+t+'</span>'}
+function donut(segs,col){var t=segs.reduce(function(s,x){return s+x.v},0),r=40,C=2*Math.PI*r,off=0,h='<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="'+r+'" fill="none" stroke="'+(col||'rgba(255,255,255,.18)')+'" stroke-width="13"/>';
+if(t>0)segs.forEach(function(s){var l=s.v/t*C;if(l>0){h+='<circle cx="50" cy="50" r="'+r+'" fill="none" stroke="'+s.c+'" stroke-width="13" stroke-dasharray="'+l+' '+(C-l)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 50 50)"/>';off+=l}});
+return h+'</svg>'}
+function ring(p,c){var r=22,C=2*Math.PI*r,l=C*p/100;return '<div class="rg"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="'+r+'" fill="none" stroke="var(--tr)" stroke-width="6"/><circle cx="28" cy="28" r="'+r+'" fill="none" stroke="'+c+'" stroke-width="6" stroke-linecap="round" stroke-dasharray="'+l+' '+(C-l)+'" transform="rotate(-90 28 28)"/></svg><b>'+fa(p)+'٪</b></div>'}
+function ld(l){return l.paid<l.total?days(l.ny,l.nm,l.day):null}
+function delBtn(k,id){var key=k+id;return '<button class="b '+(sure==key?'red':'')+'" onclick="del(\''+k+'\','+id+')">'+(sure==key?'مطمئنی؟ دوباره بزن':'🗑 حذف')+'</button>'}
+function del(k,id){var key=k+id;if(sure!=key){sure=key;render();return}S[k]=S[k].filter(function(x){return x.id!=id});sure=null;save();render()}
+function nextM(y,m,d){m+=d;while(m>12){y++;m-=12}while(m<1){y--;m+=12}return[y,m]}
+function rp(r){return r.cnt>1?r.cnt-(r.paidN||0):1}
+function pay(id){var l=S.loans.find(function(x){return x.id==id});l.paid++;var r=nextM(l.ny,l.nm,l.gap||1);l.ny=r[0];l.nm=r[1];l.chk=0;save();render()}
+function unpay(id){var l=S.loans.find(function(x){return x.id==id});l.paid--;var r=nextM(l.ny,l.nm,-(l.gap||1));l.ny=r[0];l.nm=r[1];save();render()}
+function loanCard(l){var b=B(l.bank),rem=l.total-l.paid,pc=Math.round(l.paid/l.total*100),dd=ld(l);
+return '<div class="card"><div class="top"><div class="ico" style="background:'+b[3]+'22">'+b[2]+'</div><div class="grow"><div class="name">'+esc(l.name||b[1])+'</div><div class="mu">'+fa(l.paid)+' از '+fa(l.total)+' قسط · '+tm(l.amount)+((l.gap||1)>1?' · هر '+fa(l.gap)+' ماه':' در ماه')+'</div></div>'+ring(pc,b[3])+'</div>'+
+'<div class="row" style="margin-top:8px">'+(rem>0?'<span class="mu">قسط بعدی: '+dstr(l.ny,l.nm,l.day)+(l.chk?' ⚠️':'')+'</span>'+chip(dd):'<span class="badge green">تسویه شد ✓</span>')+'</div>'+
+'<div class="two"><div><small>پرداخت‌شده</small><b class="green">'+cm(l.paid*l.amount)+'</b></div><div><small>باقی‌مانده</small><b class="red">'+cm(rem*l.amount)+'</b></div></div><div class="btns">'+
+(rem>0?'<button class="b p" onclick="pay('+l.id+')">پرداخت شد ✓</button>':'')+(l.paid>0?'<button class="b" onclick="unpay('+l.id+')">↩</button>':'')+'<button class="b" onclick="editLoan('+l.id+')">✏️ ویرایش</button>'+delBtn('loans',l.id)+'</div></div>'}
+function itemCard(r){var dd=days(r.y,r.m,r.d),o=r.dir=='out';
+return '<div class="card"><div class="top"><div class="ico" style="background:'+(o?'#ef444422':'#16a34a22')+'">'+(o?'📤':'🤝')+'</div><div class="grow"><div class="name">'+esc(r.name)+'</div><div class="mu">'+dstr(r.y,r.m,r.d)+(r.cnt>1?' · فقره '+fa(Math.min((r.paidN||0)+1,r.cnt))+' از '+fa(r.cnt)+' · هر '+fa(r.gap||1)+' ماه':'')+'</div></div>'+(r.done?'<span class="badge green">'+(o?'پرداخت شد':'دریافت شد')+' ✓</span>':chip(dd))+'</div><div style="margin-top:6px">مبلغ: <b class="'+(o?'red':'green')+'">'+tm(r.amount)+'</b>'+(r.cnt>1?' <span class="mu">(هر فقره)</span>':'')+'</div><div class="btns"><button class="b '+(r.done?'':'p')+'" onclick="togR('+r.id+')">'+(r.done?'↩ برگشت':(o?'پرداخت شد ✓':'دریافت شد ✓'))+'</button><button class="b" onclick="editItem('+r.id+')">✏️ ویرایش</button>'+delBtn('recv',r.id)+(r.cnt>1&&!r.done&&r.paidN>0?'<button class="b" onclick="unR('+r.id+')">↩</button>':'')+'</div></div>'}
+function togR(id){var r=S.recv.find(function(x){return x.id==id});
+if(!(r.cnt>1)){r.done=!r.done}
+else if(r.done){r.paidN=Math.max(0,(r.paidN||1)-1);r.done=false}
+else{r.paidN=(r.paidN||0)+1;if(r.paidN>=r.cnt)r.done=true;else{var x=nextM(r.y,r.m,r.gap||1);r.y=x[0];r.m=x[1]}}
+save();render()}
+function unR(id){var r=S.recv.find(function(x){return x.id==id});r.paidN=Math.max(0,(r.paidN||1)-1);var x=nextM(r.y,r.m,-(r.gap||1));r.y=x[0];r.m=x[1];save();render()}
+function unit(a){return a.type=='other'?(a.price||0):(S.prices[a.type]||0)}
+function assetTotal(){return S.assets.reduce(function(s,a){return s+unit(a)*a.qty},0)}
+function assetCard(a){var p=PT.find(function(x){return x[0]==a.type}),nm=a.type=='other'?(a.label||'سایر'):p[1].replace(/ \(هر گرم\)/,''),u=unit(a);
+return '<div class="card"><div class="top"><div class="ico" style="background:#f59e0b22">'+p[2]+'</div><div class="grow"><div class="name">'+esc(nm)+'</div><div class="mu">'+fa(a.qty,{maximumFractionDigits:2})+(a.type[0]=='g'?' گرم':' عدد')+(u?' · واحد: '+tm(u):' · <span class="red">قیمت واحد را وارد کن</span>')+'</div></div><b class="teal">'+cm(u*a.qty)+'</b></div><div class="btns"><button class="b" onclick="editAsset('+a.id+')">✏️ ویرایش</button>'+delBtn('assets',a.id)+'</div></div>'}
+function setP(k,v){S.prices[k]=num(v);S.pdate=dstr(T[0],T[1],T[2])+' (دستی)';save();render()}
+function go(t){tab=t;sure=null;render();window.scrollTo(0,0)}
+function render(){
+var tt=[['home','🏠','خانه'],['loans','💳','اقساط'],['recv','🤝','طلب و قرض'],['asset','🪙','دارایی']];
+document.getElementById('tabs').innerHTML=tt.map(function(t){return '<button class="'+(tab==t[0]?'on':'')+'" onclick="go(\''+t[0]+'\')"><span>'+t[1]+'</span>'+t[2]+'</button>'}).join('');
+document.getElementById('fab').innerHTML=tab=='home'?'':'<button class="fab" onclick="'+(tab=='loans'?'editLoan()':tab=='recv'?'editItem()':'editAsset()')+'">+</button>';
+document.getElementById('today').textContent='امروز '+dstr(T[0],T[1],T[2]);
+var h='',act=S.loans.filter(function(l){return l.paid<l.total});
+if(tab=='home'){
+var endM=utc(T[0],T[1],mlen(T[0],T[1])),mo=0,loanDebt=0,paidSum=0,totSum=0;
+S.loans.forEach(function(l){loanDebt+=(l.total-l.paid)*l.amount;paidSum+=l.paid*l.amount;totSum+=l.total*l.amount});
+act.forEach(function(l){if(utc(l.ny,l.nm,l.day)<=endM)mo+=l.amount});
+var outs=S.recv.filter(function(r){return r.dir=='out'&&!r.done}),ins=S.recv.filter(function(r){return r.dir!='out'&&!r.done});
+outs.forEach(function(r){if(utc(r.y,r.m,r.d)<=endM)mo+=r.amount});
+var debt=loanDebt+outs.reduce(function(s,r){return s+r.amount*rp(r)},0),rc=ins.reduce(function(s,r){return s+r.amount*rp(r)},0),as=assetTotal(),net=as+rc-debt;
+h+='<div class="hero"><div class="row"><b>دارایی در برابر بدهی</b><span class="mu">به تومان</span></div><div class="dn">'+donut([{v:as,c:'#2dd4bf'},{v:rc,c:'#86efac'},{v:debt,c:'#fb7185'}])+'<div class="c"><span>خالص ثروت</span><b>'+(net<0?'−':'')+cm(Math.abs(net))+'</b></div></div><div class="lg"><div><i style="background:#2dd4bf"></i><span>دارایی‌ها</span><b>'+tm(as)+'</b></div><div><i style="background:#86efac"></i><span>طلب‌ها</span><b>'+tm(rc)+'</b></div><div><i style="background:#fb7185"></i><span>کل بدهی</span><b>'+tm(debt)+'</b></div></div></div>';
+var pp=totSum?Math.round(paidSum/totSum*100):0;
+h+='<div class="card"><div class="row"><b>وضعیت پرداخت اقساط</b><span class="badge pu">'+fa(S.loans.length)+' وام</span></div><div class="dn" style="width:170px;height:170px;color:var(--tx)">'+donut([{v:paidSum,c:'#22c55e'},{v:Math.max(totSum-paidSum,0),c:'#a78bfa'}],'var(--tr)')+'<div class="c"><b>'+fa(pp)+'٪</b><span>پرداخت شده</span></div></div><div class="two"><div><small>🟢 پرداخت‌شده</small><b class="green">'+cm(paidSum)+'</b></div><div><small>🟣 باقی‌مانده</small><b class="pu">'+cm(totSum-paidSum)+'</b></div></div></div>';
+var ev=[];act.forEach(function(l){ev.push({k:'l',dd:ld(l),n:l.name||B(l.bank)[1],a:l.amount,d:dstr(l.ny,l.nm,l.day),i:B(l.bank)[2]})});
+S.recv.filter(function(r){return!r.done}).forEach(function(r){ev.push({k:r.dir=='out'?'l':'r',dd:days(r.y,r.m,r.d),n:r.name,a:r.amount,d:dstr(r.y,r.m,r.d),i:r.dir=='out'?'📤':'🤝'})});
+ev.sort(function(a,b){return a.dd-b.dd});
+var nx=ev[0];
+h+='<div class="grid"><div class="g g1"><span>باید تا آخر این ماه بپردازی</span><b>'+cm(mo)+' تومان</b></div><div class="g g2"><span>نزدیک‌ترین سررسید</span>'+(nx?'<b>'+esc(nx.n)+'<br><small>'+nx.d+'</small></b>':'<b>—</b>')+'</div></div>';
+h+='<div class="sec">سررسیدهای پیش رو</div>'+(ev.length?ev.slice(0,8).map(function(e){return '<div class="card" style="padding:10px 13px"><div class="top"><div class="ico" style="width:38px;height:38px;font-size:18px;background:'+(e.k=='l'?'#ef444422':'#16a34a22')+'">'+e.i+'</div><div class="grow"><div class="name" style="font-size:14px">'+esc(e.n)+'</div><div class="mu">'+e.d+'</div></div><div style="text-align:left"><b class="'+(e.k=='l'?'red':'green')+'">'+(e.k=='l'?'−':'+')+cm(e.a)+'</b><br>'+chip(e.dd)+'</div></div></div>'}).join(''):'<div class="empty">سررسیدی ثبت نشده</div>');
+}
+if(tab=='loans'){S.loans.slice().sort(function(a,b){return(ld(a)==null)-(ld(b)==null)||ld(a)-ld(b)}).forEach(function(l){h+=loanCard(l)});if(!S.loans.length)h+='<div class="empty">وامی ثبت نشده؛ با دکمه + اضافه کن</div>'}
+if(tab=='recv'){h+='<div class="seg"><button class="'+(rt=='in'?'on':'')+'" onclick="rt=\'in\';render()">🤝 طلب‌های من</button><button class="'+(rt=='out'?'on':'')+'" onclick="rt=\'out\';render()">📤 قرض و چک‌های من</button></div>';
+var L=S.recv.filter(function(r){return(r.dir=='out')==(rt=='out')}).sort(function(a,b){return a.done-b.done||days(a.y,a.m,a.d)-days(b.y,b.m,b.d)});L.forEach(function(r){h+=itemCard(r)});if(!L.length)h+='<div class="empty">موردی ثبت نشده</div>'}
+if(tab=='asset'){
+h+='<div class="hero"><div class="row"><b>ارزش کل دارایی‌ها</b></div><div style="font-size:24px;font-weight:800;margin:6px 0">'+tm(assetTotal())+'</div><div class="mu">قیمت‌ها: '+(S.pdate||'وارد نشده')+'</div></div>';
+h+='<div class="card"><details><summary>⚙️ قیمت‌های روز (قابل ویرایش)</summary><div class="mu" style="margin:6px 0">قیمت‌ها را از tgju.org می‌خوانم؛ فقط بنویس «قیمت‌ها را بروز کن». یا خودت دستی عوض کن.</div>'+PT.filter(function(p){return p[0]!='other'}).map(function(p){return '<div class="pr"><span>'+p[2]+' '+p[1]+'</span><input inputmode="numeric" value="'+(S.prices[p[0]]?fa(S.prices[p[0]]).replace(/٬/g,','):'')+'" placeholder="۰" onchange="setP(\''+p[0]+'\',this.value)"></div>'}).join('')+'<div class="btns"><a class="b p" style="text-decoration:none" href="https://www.tgju.org" target="_blank" rel="noopener">🔗 باز کردن tgju.org</a></div></details></div>';
+S.assets.forEach(function(a){h+=assetCard(a)});if(!S.assets.length)h+='<div class="empty">هنوز دارایی‌ای ثبت نکردی؛ با دکمه + اضافه کن</div>'}
+document.getElementById('app').innerHTML=h}
+function pickB(el){var p=el.parentNode;p.dataset.v=el.dataset.k;[].forEach.call(p.children,function(c){c.classList.toggle('on',c==el)})}
+function form(title,fs,vals,cb){var h='<div class="modal" onclick="if(event.target==this)closeM()"><div class="sheet"><div class="name" style="font-size:17px">'+title+'</div>';
+fs.forEach(function(f){var v=vals[f[0]];h+='<label>'+f[1]+'</label>';
+if(f[2]=='bank')h+='<div class="bgrid" id="f_'+f[0]+'" data-v="'+v+'">'+BANKS.map(function(b){return '<button type="button" class="bk'+(b[0]==v?' on':'')+'" data-k="'+b[0]+'" onclick="pickB(this)"><i style="background:'+b[3]+'33">'+b[2]+'</i>'+b[1]+'</button>'}).join('')+'</div>';
+else if(f[2]=='sel')h+='<select id="f_'+f[0]+'">'+f[3].map(function(o){return '<option value="'+o[0]+'"'+(o[0]==v?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select>';
+else h+='<input id="f_'+f[0]+'" inputmode="'+(f[2]=='t'?'text':'numeric')+'" value="'+esc(v==null?'':v)+'">'});
+h+='<div class="btns" style="margin-top:16px"><button class="b p" id="sv">ذخیره</button><button class="b" onclick="closeM()">انصراف</button></div></div></div>';
+document.getElementById('modal').innerHTML=h;
+document.getElementById('sv').onclick=function(){var o={};fs.forEach(function(f){var e=document.getElementById('f_'+f[0]);o[f[0]]=f[2]=='bank'?e.dataset.v:f[2]=='t'?e.value.trim():(f[2]=='sel'&&isNaN(e.value))?e.value:num(e.value)});cb(o)}}
+function closeM(){document.getElementById('modal').innerHTML=''}
+var MO=MN.map(function(m,i){return[i+1,m]});
+function editLoan(id){var l=id?S.loans.find(function(x){return x.id==id}):{bank:'other',name:'',amount:'',day:'',total:'',paid:0,gap:1,ny:T[0],nm:T[1]};
+form(id?'ویرایش وام':'وام یا قسط جدید',[['bank','انتخاب بانک یا نوع وام','bank'],['name','عنوان (اختیاری، مثلاً وام مسکن)','t'],['amount','مبلغ هر قسط (تومان)','n'],['day','روز پرداخت در ماه (۱ تا ۳۱)','n'],['gap','فاصله بین اقساط (هر چند ماه یک‌بار؟)','n'],['total','تعداد کل اقساط (ماه)','n'],['paid','چند قسط تا الان پرداخت شده؟','n'],['nm','قسط بعدی در کدام ماه است؟','sel',MO],['ny','سال قسط بعدی','n']],l,function(o){if(!o.amount||!o.day||!o.total)return;o.day=Math.min(31,Math.max(1,o.day));o.gap=Math.max(1,o.gap||1);o.nm=num(o.nm);o.chk=0;if(id)Object.assign(l,o);else{o.id=uid();S.loans.push(o)}save();closeM();render()})}
+function editItem(id){var r=id?S.recv.find(function(x){return x.id==id}):{name:'',amount:'',y:T[0],m:T[1],d:T[2],done:false,dir:rt,cnt:1,paidN:0,gap:1};
+form(id?'ویرایش':'مورد جدید',[['dir','نوع','sel',[['in','🤝 طلب من (کسی باید به من بدهد)'],['out','📤 قرض یا چک من (من باید بدهم)']]],['name','نام شخص / بانک / توضیح','t'],['amount','مبلغ (تومان)','n'],['d','روز سررسید (قسط یا فقره بعدی)','n'],['m','ماه','sel',MO],['y','سال','n'],['cnt','چند فقره/قسط است؟ (۱ = یک‌باره)','n'],['gap','فاصله بین فقره‌ها (ماه)','n']],r,function(o){if(!o.name||!o.amount)return;o.m=num(o.m);o.cnt=Math.max(1,o.cnt||1);o.gap=Math.max(1,o.gap||1);if(id){o.paidN=Math.min(r.paidN||0,o.cnt);o.done=o.cnt>1?o.paidN>=o.cnt:r.done;Object.assign(r,o)}else{o.id=uid();o.done=false;o.paidN=0;S.recv.push(o)}rt=o.dir;save();closeM();render()})}
+function editAsset(id){var a=id?S.assets.find(function(x){return x.id==id}):{type:'g24',qty:'',label:'',price:''};
+form(id?'ویرایش':'دارایی جدید',[['type','نوع','sel',PT.map(function(p){return[p[0],p[2]+' '+p[1]]})],['qty','مقدار (گرم یا تعداد)','n'],['label','فقط برای «سایر»: عنوان','t'],['price','فقط برای «سایر»: قیمت هر واحد (تومان)','n']],a,function(o){if(!o.qty)return;if(id)Object.assign(a,o);else{o.id=uid();S.assets.push(o)}save();closeM();render()})}
+render();
+</script>
+</body>
+</html>
